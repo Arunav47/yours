@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:yours/splash_screen/splash_screen.dart';
-import 'package:yours/authentication/loginpage/login_page.dart';
+import 'package:yours/pages/splash_screen/splash_screen.dart';
+import 'package:yours/pages/authentication/loginpage/login_page.dart';
 import 'package:yours/victory_page/victory_page.dart';
 
 

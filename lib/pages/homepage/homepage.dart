@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
-import 'package:yours/homepage/widgets/customappbar.dart';
+import 'package:yours/pages/homepage/widgets/customappbar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
                title: Text("Arunav",
                    style: const TextStyle(
                        fontSize: 22, fontWeight: FontWeight.w700))),
-           slider: Container(color: Colors.red),
+           slider: Container(color: Colors.indigoAccent[600]),
            child: Container(color: Colors.amber),
          ));
   }

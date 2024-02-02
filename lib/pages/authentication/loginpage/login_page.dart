@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:yours/authentication/widgets/togglevisibility.dart';
-import 'package:yours/homepage/homepage.dart';
+import 'package:yours/pages/authentication/widgets/togglevisibility.dart';
+import 'package:yours/pages/homepage/homepage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

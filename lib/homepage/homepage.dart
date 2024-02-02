@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:yours/homepage/widgets/customappbar.dart';
 
 class HomePage extends StatefulWidget {
@@ -9,12 +10,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  final _key = GlobalKey<SliderDrawerState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        title: "Arunav",
-      )
-    );
+      body: SliderDrawer(
+          slideDirection: SlideDirection.RIGHT_TO_LEFT,
+           key: _key,
+           appBar: SliderAppBar(
+               appBarColor: Colors.white,
+               title: Text("Arunav",
+                   style: const TextStyle(
+                       fontSize: 22, fontWeight: FontWeight.w700))),
+           slider: Container(color: Colors.red),
+           child: Container(color: Colors.amber),
+         ));
   }
 } 

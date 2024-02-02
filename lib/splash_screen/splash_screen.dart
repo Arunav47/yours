@@ -24,10 +24,10 @@ void initState(){
       body:
        
       Center(
-        child: Image.asset(
-          "assets/yours-high-resolution-logo.png", // Replace with the path to your PNG file
-          width: 200, // Adjust the width as needed
-          height: 200, // Adjust the height as needed
+        child: Container(
+          height: 200,
+          width: 200,
+          child: Image(image: AssetImage('assets/yours-high-resolution-logo-transparent.png'), fit: BoxFit.cover,),
         ),
       ),
     );

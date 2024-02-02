@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class VictoryPage extends StatefulWidget {
   const VictoryPage({super.key});
@@ -11,15 +12,22 @@ class _VictoryPageState extends State<VictoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Arunav"),
-        actions: [
-          InkWell(
+      body: Center(
+        child: Lottie.asset('assets/LottieLogo1.json'),
+      )
+      // appBar: AppBar(
+      //   title: Text("Arunav"),
+      //   actions: [
+      //     InkWell(
             
-          )
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(items: [],),
+      //     )
+      //   ],
+      // ),
+      // body: Column(
+
+      // ),
+    //   bottomNavigationBar: BottomNavigationBar(items: [],),
+    // );
     );
   }
 }

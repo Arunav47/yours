@@ -15,6 +15,9 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(image: AssetImage("assets/background.jpg"), fit: BoxFit.cover)
+        ),
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
@@ -25,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
                   alignment: Alignment.topLeft,
                   child: const Text(
                     "Welcome Back!",
-                    style: TextStyle(fontSize: 30),
+                    style: TextStyle(fontSize: 35, color: Colors.white),
                   )),
               const SizedBox(
                 height: 40,
@@ -40,9 +43,11 @@ class _LoginPageState extends State<LoginPage> {
                       height: 65,
                       child: TextFormField(
                         decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.email),
+                            prefixIcon: Icon(Icons.email, color: Colors.white70,),
                             labelText: "Email",
+                            labelStyle: TextStyle(color: Colors.white70),
                             border: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.white70),
                                 borderRadius: BorderRadius.circular(30))),
                       ),
                     ),
@@ -54,8 +59,9 @@ class _LoginPageState extends State<LoginPage> {
                       child: TextFormField(
                         obscureText: isNotVisible,
                         decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.lock),
+                            prefixIcon: Icon(Icons.lock, color: Colors.white70,),
                             labelText: "Password",
+                            labelStyle: TextStyle(color: Colors.white70),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30),
                             ),
@@ -93,7 +99,9 @@ class _LoginPageState extends State<LoginPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Don't have an account?"),
+                    const Text("Don't have an account?", style: TextStyle(
+                      color: Colors.white
+                    ),),
                     TextButton(
                       onPressed: () {},
                       child: const Text(

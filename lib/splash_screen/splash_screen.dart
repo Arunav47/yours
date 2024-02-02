@@ -19,13 +19,16 @@ void initState(){
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xFF21232B),
+    return Scaffold(
+      backgroundColor:Colors.white,
       body:
        
       Center(
-        
-        child: Text("Test")
+        child: Image.asset(
+          "assets/yours-high-resolution-logo.png", // Replace with the path to your PNG file
+          width: 200, // Adjust the width as needed
+          height: 200, // Adjust the height as needed
+        ),
       ),
     );
   }

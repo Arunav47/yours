@@ -71,6 +71,9 @@ flutter:
     - assets\background.jpg
     - assets\yours-high-resolution-logo-transparent.png
     - assets\LottieLogo1.json
+    - assets\Animation - 1706937003110.json
+    - assets\Animation - 1706937546672.json
+    - assets\g7CHkkyoc1.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -4,12 +4,7 @@ import 'package:yours/pages/homepage/homepage.dart';
 import 'package:yours/pages/splash_screen/splash_screen.dart';
 import 'package:yours/pages/authentication/loginpage/login_page.dart';
 import 'package:yours/pages/victory_page/victory_page.dart';
-// <<<<<<< HEAD
 
-
-
-// =======
-// >>>>>>> 20f2735a4b56db423aa8cf498cab0d34e0e812c4
 
 
 void main() async{

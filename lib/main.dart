@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:yours/pages/breathing/breathing_practice.dart';
 import 'package:yours/pages/emotion_analysis_page/emotionanalysis_page.dart';
 import 'package:yours/pages/homepage/homepage.dart';
 import 'package:yours/pages/homepage/landing_page.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
         useMaterial3: true,
       ),
-      home: const FeelingAnalysis(),
+      home: BreathingPractice(practiceFor: "hello",),
     );
   }
 }

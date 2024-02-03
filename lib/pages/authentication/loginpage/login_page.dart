@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:yours/Utils/Validator/validator.dart';
 import 'package:yours/pages/authentication/signup_page/signup_page.dart';
 import 'package:yours/pages/authentication/widgets/togglevisibility.dart';
+import 'package:yours/pages/emotion_analysis_page/emotionanalysis_page.dart';
 import 'package:yours/pages/homepage/homepage.dart';
 
 class LoginPage extends StatefulWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
-// import 'package:yours/pages/homepage/widgets/customappbar.dart';
 import 'package:lottie/lottie.dart';
+import 'package:yours/pages/journal/journal.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
           appBarHeight: 90,
           drawerIconColor: Colors.white,
           appBarColor: Color.fromARGB(255, 28, 36, 82).withOpacity(1),
-          title: Text("Home",
+          title: const Text("Home",
               style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w700,
@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
             alignment: Alignment.center,
             height: height,
             width: width,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage('assets/background.jpg'),
                     fit: BoxFit.cover)),
@@ -202,6 +202,9 @@ class _HomePageState extends State<HomePage> {
                       FadeEffect(duration: Duration(seconds: 1), delay: Duration(seconds: 2)),
                     ],
                     child: InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const Journal()));  
+                      },
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 10),
                         decoration: BoxDecoration(

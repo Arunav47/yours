@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:yours/pages/authentication/loginpage/login_page.dart';
+import 'package:yours/pages/emotion_analysis_page/emotionanalysis_page.dart';
 import 'package:yours/pages/homepage/homepage.dart';
 
 class SplashServices {
@@ -12,7 +13,7 @@ class SplashServices {
       Timer(
           const Duration(seconds: 6),
           () => Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const HomePage())));
+              MaterialPageRoute(builder: (context) => const FeelingAnalysis())));
     } else {
       Timer(
           const Duration(seconds: 6),

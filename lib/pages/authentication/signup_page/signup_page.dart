@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:yours/Utils/Validator/validator.dart';
 import 'package:yours/pages/authentication/loginpage/login_page.dart';
 import 'package:yours/pages/authentication/widgets/togglevisibility.dart';
+import 'package:yours/pages/emotion_analysis_page/emotionanalysis_page.dart';
 import 'package:yours/pages/homepage/homepage.dart';
 
 class SignupPage extends StatefulWidget {
@@ -19,6 +21,7 @@ class _SignupPageState extends State<SignupPage> {
   bool isNotVisible = true;
   final _key = GlobalKey<FormState>();
   final _auth = FirebaseAuth.instance;
+  final ref = FirebaseDatabase.instance.ref('Personal info');
   void signup() {
     if (_key.currentState!.validate()) {
       _auth

@@ -23,13 +23,13 @@ class _SplashScreenState extends State<SplashScreen> {
     double height = size.height;
     double width = size.width;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromARGB(255, 4, 11, 54),
       body: Container(
         height: height,
         width: width,
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/background.jpg'), fit: BoxFit.cover)),
+        // decoration: BoxDecoration(
+        //     image: DecorationImage(
+        //         image: AssetImage('assets/background.jpg'), fit: BoxFit.cover)),
         child: Animate(
           effects: [
             FadeEffect(duration: Duration(seconds: 2)),

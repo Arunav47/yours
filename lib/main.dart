@@ -6,6 +6,7 @@ import 'package:yours/pages/authentication/loginpage/login_page.dart';
 import 'package:yours/pages/victory_page/victory_page.dart';
 
 
+
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();

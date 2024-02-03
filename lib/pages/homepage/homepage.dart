@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 // import 'package:yours/pages/homepage/widgets/customappbar.dart';
+import 'package:lottie/lottie.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -30,31 +31,139 @@ class _HomePageState extends State<HomePage> {
                    style: TextStyle(
                        fontSize: 22, fontWeight: FontWeight.w700, color: Colors.white))),
            slider: Container(color: Colors.indigoAccent),
-           child: Container(
-            alignment: Alignment.center,
-            height: height,
-            width: width,
+           child: Stack(
+             children: [
+               Container(
+                alignment: Alignment.center,
+                height: height,
+                width: width,
+                decoration: BoxDecoration(
+                  image:DecorationImage(image: AssetImage('assets/background.jpg'), fit: BoxFit.cover)
+                ),
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Color.fromARGB(255, 8, 20, 86).withOpacity(0.7),
+                          ),
+                          height: 100,
+                          margin: EdgeInsets.symmetric(horizontal: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                padding: EdgeInsets.symmetric(vertical: 10),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Container(
+                                          padding: EdgeInsets.symmetric(horizontal: 10),
+                                      child: Row(
+                                        children: [
+                                          Icon(Icons.add_circle_outline, size: 25, color: Colors.green,),
+                                          SizedBox(width: 10,),
+                                          Text("Breathing", style: TextStyle(
+                                            fontSize: 15,
+                                            color: Colors.green
+                                          ),)
+                                        ],
+                                      ),
+                                    ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.symmetric(horizontal: 15),
+                                      child: Text("Anxiety", style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                      ),),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                height: 100,
+                                width: 100,
+                                child: Lottie.asset('assets/g7CHkkyoc1.json'),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20,),
+                      InkWell(
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Color.fromARGB(255, 8, 20, 86).withOpacity(0.7),
+                          ),
+                          height: 200,
+                          margin: EdgeInsets.symmetric(horizontal: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                children: [
+                                  Container(
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.add_circle_outline),
+                                        Text("Breathing")
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                                    alignment: Alignment.topLeft,
+                                    child: Text("Insomnia", style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                    ),),
+                                  ),
+                                ],
+                              ),
+                              Container(
+                                height: 150,
+                                width: 150,
+                                child: Lottie.asset('assets/Animation - 1706937546672.json'),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+               ),
+               Positioned(
+                top: 20,
+                left: 20,
+                child: Container(
+                  alignment: Alignment.center,
+
+            height: 50,
+            width: 50,
             decoration: BoxDecoration(
-              image:DecorationImage(image: AssetImage('assets/background.jpg'), fit: BoxFit.cover)
+              color: Colors.yellow,
+              borderRadius: BorderRadius.circular(50),
+              border: Border.all(width: 4, color: Colors.green)
             ),
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 100,
-                    margin: EdgeInsets.symmetric(horizontal: 10),
-                    color: Color.fromARGB(255, 8, 20, 86).withOpacity(0.7),
-                    child: Row(
-                      children: [
-                        Text("")
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
+            child: Text("17", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.deepPurpleAccent),),
+          )),
+             ],
            ),
          ));
   }

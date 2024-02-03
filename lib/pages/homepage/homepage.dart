@@ -115,27 +115,34 @@ class _HomePageState extends State<HomePage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Column(
-                                children: [
-                                  Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 10),
-                                    child: Row(
-                                      children: [
-                                        Icon(Icons.add_circle_outline, color: Colors.cyanAccent,),
-                                        SizedBox(width: 10,),
-                                        Text("Bed time story",style: TextStyle(color: Colors.cyanAccent, fontSize: 15),)
-                                      ],
+                              Container(
+                                padding: EdgeInsets.symmetric(vertical: 10),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.symmetric(horizontal: 10),
+                                      child: Row(
+                                        children: [
+                                          Icon(Icons.bed, color: Colors.cyanAccent,),
+                                          SizedBox(width: 10,),
+                                          Text("Bed time story",style: TextStyle(color: Colors.cyanAccent, fontSize: 15),)
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                  Container(
-                                    padding: EdgeInsets.symmetric( horizontal: 15),
-                                    alignment: Alignment.topLeft,
-                                    child: Text("Insomnia", style: TextStyle(
-                                      fontSize: 20,
-                                      color: Colors.white,
-                                    ),),
-                                  ),
-                                ],
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.symmetric( horizontal: 15),
+                                      alignment: Alignment.topLeft,
+                                      child: Text("Insomnia", style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                      ),),
+                                    ),
+                                  ],
+                                ),
                               ),
                               Container(
                                 height: 150,

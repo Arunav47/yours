@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
             appBarHeight: 90,
               drawerIconColor: Colors.white,
                appBarColor: Color.fromARGB(255, 28, 36, 82).withOpacity(1),
-               title: Text("Arunav",
+               title: Text("My Plans",
                    style: TextStyle(
                        fontSize: 22, fontWeight: FontWeight.w700, color: Colors.white))),
            slider: Container(color: Colors.indigoAccent),

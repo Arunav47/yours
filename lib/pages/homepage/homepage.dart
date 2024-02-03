@@ -273,6 +273,83 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 20,),
+                  Animate(
+                    effects: [
+                      FadeEffect(duration: Duration(seconds: 1), delay: Duration(seconds: 3)),
+                    ],
+                    child: InkWell(
+                      child: Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Color.fromARGB(255, 8, 20, 86).withOpacity(0.7),
+                        ),
+                        height: 100,
+                        margin: EdgeInsets.symmetric(horizontal: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.symmetric(vertical: 10),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        padding:
+                                            EdgeInsets.symmetric(horizontal: 10),
+                                        child: Row(
+                                          children: [
+                                            Icon(
+                                              Icons.music_note,
+                                              size: 25,
+                                              color: Colors.green,
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            Text(
+                                              "Soothing Sound",
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  color: Colors.green),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.symmetric(horizontal: 15),
+                                    child: Text(
+                                      "Relaxing Music",
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              height: 100,
+                              width: 100,
+                              child: Lottie.asset(
+                                'assets/Animation - 1706942016171.json',
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -295,7 +372,8 @@ class _HomePageState extends State<HomePage> {
                       fontWeight: FontWeight.bold,
                       color: Colors.deepPurpleAccent),
                 ),
-              )),
+              )
+            ),
         ],
       ),
     ));

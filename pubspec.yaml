@@ -42,6 +42,12 @@ dependencies:
   firebase_storage: ^11.6.4
   cloud_firestore: ^4.15.3
   flutter_animate: ^4.5.0
+  awesome_icons: ^1.1.0
+  record: ^5.0.4
+  permission_handler: ^11.2.0
+  audioplayers: ^5.2.1
+  flutter_sound: ^9.2.13
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +82,8 @@ flutter:
     - assets\Animation - 1706937546672.json
     - assets\g7CHkkyoc1.json
     - assets\Animation - 1706942016171.json
+    - assets\Animation - 1706956849389.json
+    - assets\BgwHKVIBvm.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

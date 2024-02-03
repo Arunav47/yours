@@ -121,7 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                             validator: (value) =>
                                 Validator().isValidPassword(value),
                             decoration: InputDecoration(
-                                prefixIcon: Icon(
+                                prefixIcon: const Icon(
                                   Icons.lock,
                                   color: Colors.white70,
                                 ),

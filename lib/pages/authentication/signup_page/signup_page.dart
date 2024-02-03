@@ -1,27 +1,28 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:yours/Utils/Validator/validator.dart';
-import 'package:yours/pages/authentication/signup_page/signup_page.dart';
+import 'package:yours/pages/authentication/loginpage/login_page.dart';
 import 'package:yours/pages/authentication/widgets/togglevisibility.dart';
 import 'package:yours/pages/homepage/homepage.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class SignupPage extends StatefulWidget {
+  const SignupPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignupPage> createState() => _SignupPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignupPageState extends State<SignupPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   bool isNotVisible = true;
   final _key = GlobalKey<FormState>();
   final _auth = FirebaseAuth.instance;
-  void login() {
+  void signup() {
     if (_key.currentState!.validate()) {
       _auth
-          .signInWithEmailAndPassword(
+          .createUserWithEmailAndPassword(
               email: emailController.text.toString(),
               password: passwordController.text.toString())
           .then((value) {
@@ -77,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                   Container(
                       alignment: Alignment.topLeft,
                       child: const Text(
-                        "Welcome Back!",
+                        "Hello!",
                         style: TextStyle(fontSize: 35, color: Colors.white),
                       )),
                   const SizedBox(
@@ -152,11 +153,11 @@ class _LoginPageState extends State<LoginPage> {
                                 backgroundColor: Colors.indigo),
                             onPressed: () {
                               if (_key.currentState!.validate()) {
-                                login();
+                                signup();
                               }
                             },
                             child: const Text(
-                              "LOGIN",
+                              "SIGN UP",
                               style:
                                   TextStyle(fontSize: 20, color: Colors.white),
                             ))
@@ -171,7 +172,7 @@ class _LoginPageState extends State<LoginPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text(
-                          "Don't have an account?",
+                          "Already have an account?",
                           style: TextStyle(color: Colors.white),
                         ),
                         TextButton(
@@ -179,10 +180,10 @@ class _LoginPageState extends State<LoginPage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const SignupPage()));
+                                    builder: (context) => const LoginPage()));
                           },
                           child: const Text(
-                            "Sign Up",
+                            "Login",
                           ),
                         )
                       ],

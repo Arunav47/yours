@@ -10,12 +10,12 @@ class SplashServices {
   void isLogin(BuildContext context) {
     if (_auth.currentUser != null) {
       Timer(
-          const Duration(seconds: 5),
+          const Duration(seconds: 6),
           () => Navigator.push(context,
               MaterialPageRoute(builder: (context) => const HomePage())));
     } else {
       Timer(
-          const Duration(seconds: 5),
+          const Duration(seconds: 6),
           () => Navigator.push(context,
               MaterialPageRoute(builder: (context) => const LoginPage())));
     }

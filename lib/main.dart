@@ -4,6 +4,7 @@ import 'package:yours/pages/breathing/breathing_practice.dart';
 import 'package:yours/pages/emotion_analysis_page/emotionanalysis_page.dart';
 import 'package:yours/pages/homepage/homepage.dart';
 import 'package:yours/pages/homepage/landing_page.dart';
+import 'package:yours/pages/soundPlayer/soundPlayer.dart';
 import 'package:yours/pages/splash_screen/splash_screen.dart';
 import 'package:yours/pages/authentication/loginpage/login_page.dart';
 import 'package:yours/pages/victory_page/victory_page.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
         useMaterial3: true,
       ),
-      home: BreathingPractice(practiceFor: "hello",),
+      home: SplashScreen(),
     );
   }
 }

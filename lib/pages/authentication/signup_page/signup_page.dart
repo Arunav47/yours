@@ -5,6 +5,8 @@ import 'package:yours/Utils/Validator/validator.dart';
 import 'package:yours/pages/authentication/loginpage/login_page.dart';
 import 'package:yours/pages/authentication/widgets/togglevisibility.dart';
 import 'package:yours/pages/homepage/homepage.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_database/ui/firebase_animated_list.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -14,8 +16,10 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+   final ref = FirebaseDatabase.instance.ref('Personal Data');
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final nameController = TextEditingController();
   bool isNotVisible = true;
   final _key = GlobalKey<FormState>();
   final _auth = FirebaseAuth.instance;
@@ -90,6 +94,30 @@ class _SignupPageState extends State<SignupPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+
+                              SizedBox(
+                          height: 85,
+                          child: TextFormField(
+                            controller: nameController,
+                            style: TextStyle(color: Colors.white),
+                            
+                            decoration: InputDecoration(
+                                prefixIcon: Icon(
+                                  Icons.person,
+                                  color: Colors.white70,
+                                ),
+                                labelText: "What do you go by?",
+                                labelStyle: TextStyle(color: Colors.white70),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                          ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 40,
+                        ),
+                        
                         SizedBox(
                           height: 85,
                           child: TextFormField(
@@ -155,6 +183,12 @@ class _SignupPageState extends State<SignupPage> {
                               if (_key.currentState!.validate()) {
                                 signup();
                               }
+
+                              ref.child(DateTime.now().millisecondsSinceEpoch.toString()).set({
+                                'Name' : nameController.text.toString(),
+                                'e-mail' : emailController.text.toString(),
+                                
+                            });
                             },
                             child: const Text(
                               "SIGN UP",

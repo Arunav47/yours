@@ -13,12 +13,39 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+            backgroundColor: Color.fromARGB(255, 4, 11, 54),
+
+        
+            
       body: Container(
         child: Column(
-            children: [
-            ],
-          ),
-      )
+          
+          children: [
+            
+              
+                
+                  SizedBox(height: 200,),
+                  
+Container(
+  decoration: BoxDecoration(
+    border: Border.all(color: Colors.greenAccent)
+  ),
+  child: Row(
+   mainAxisAlignment: MainAxisAlignment.center,
+   children: <Widget>[
+      Image.asset('assets/profile_pic.png', height: 150, width: 150),
+    
+   ],
+  ),
+)
+                ],
+              ),
+            )
+
+
+          
+        
+      
     );
   }
 }

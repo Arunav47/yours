@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yours/pages/homepage/homepage.dart';
+import 'package:yours/pages/journaldetails/journaldetails.dart';
+import 'package:yours/pages/profile/profile_page.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -12,8 +14,8 @@ class _LandingPageState extends State<LandingPage> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    HomePage(),
-    HomePage()
+    JournalDetails(),
+    ProfilePage()
   ];
   void _onItemTapped(int index) {
     setState(() {
@@ -25,18 +27,20 @@ class _LandingPageState extends State<LandingPage> {
     return Scaffold(
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color.fromARGB(255, 4, 11, 54),
+        unselectedItemColor: Colors.white,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Icon(Icons.book),
+            label: 'Journal',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Icon(Icons.account_circle_rounded),
+            label: 'Profile',
           ),
         ],
         currentIndex: _selectedIndex,

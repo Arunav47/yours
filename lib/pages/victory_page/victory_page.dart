@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:yours/pages/homepage/landing_page.dart';
 
 class VictoryPage extends StatefulWidget {
+  static const String routeName = "/VictoryPage";
   const VictoryPage({super.key});
 
   @override
@@ -46,7 +48,9 @@ class _VictoryPageState extends State<VictoryPage> {
                 Column(
                   children: [
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>LandingPage()));
+                      },
                       icon: Icon(
                         Icons.home,
                         color: Colors.white,

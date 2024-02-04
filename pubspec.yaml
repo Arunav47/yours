@@ -51,6 +51,9 @@ dependencies:
   timer_builder: ^2.0.0
   avatar_glow: ^3.0.1
   speech_to_text: ^6.6.0
+  highlight_text: ^1.7.0
+  fluttertoast: ^8.2.4
+  # just_audio: ^0.9.36
 
 dev_dependencies:
   flutter_test:
@@ -88,8 +91,10 @@ flutter:
     - assets\Animation - 1706956849389.json
     - assets\BgwHKVIBvm.json
     - assets\xvEoTtb4Pg.json
-    - assets\audio\English Stories  The Destiny  English audio story  listen and learn english.mp3
+    - assets\English Stories  The Destiny  English audio story  listen and learn english.mp3
     - assets\Animation - 1706993912026.json
+    - assets\profile_pic.png
+    - assets\Animation - 1707008647878.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

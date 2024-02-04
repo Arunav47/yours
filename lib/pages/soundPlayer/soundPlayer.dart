@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter/services.dart';
+// import 'package:just_audio/just_audio.dart';
 
 class soundPlayer extends StatefulWidget {
    soundPlayer({super.key});
@@ -35,9 +36,9 @@ class _soundPlayerState extends State<soundPlayer> {
       Future setAudio() async{
 
         // audioPlayer.setReleaseMode(ReleaseMode.loop);
-
-        String url = 'assets\audio\English Stories  The Destiny  English audio story  listen and learn english.mp3';
-        audioPlayer.play(UrlSource("assets\audio\English Stories  The Destiny  English audio story  listen and learn english.mp3"));
+        final player = AudioCache(prefix: 'assets/');
+        final url = await player.load('English Stories  The Destiny  English audio story  listen and learn english.mp3');
+        audioPlayer.setSourceUrl(url.path);
 
         // final file = File(path);
         // audioPlayer.setSourceUrl(file.path, isLocal:true);
@@ -132,7 +133,7 @@ class _soundPlayerState extends State<soundPlayer> {
               if(isPlaying){
                 await audioPlayer.pause();
               }
-              else {String url = 'assets\audio\English Stories  The Destiny  English audio story  listen and learn english.mp3';
+              else {String url = 'assets/English Stories  The Destiny  English audio story  listen and learn english.mp3';
                 await audioPlayer.play(UrlSource(url));
                 
                 }

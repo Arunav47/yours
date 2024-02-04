@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:lottie/lottie.dart';
+import 'package:yours/pages/breathing/breathing_practice.dart';
 import 'package:yours/pages/journal/journal.dart';
 
 class HomePage extends StatefulWidget {
@@ -53,6 +54,9 @@ class _HomePageState extends State<HomePage> {
                       FadeEffect(duration: Duration(seconds: 1), delay: Duration(seconds: 0))
                     ],
                     child: InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>BreathingPractice(practiceFor: "Anxiety")));
+                      },
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 10),
                         decoration: BoxDecoration(
@@ -203,7 +207,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                     child: InkWell(
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const Journal()));  
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Journal()));  
                       },
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 10),

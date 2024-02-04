@@ -3,10 +3,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:yours/Utils/Validator/validator.dart';
+import 'package:yours/Utils/toastMessage/toastMessage.dart';
 import 'package:yours/pages/authentication/loginpage/login_page.dart';
 import 'package:yours/pages/authentication/widgets/togglevisibility.dart';
 import 'package:yours/pages/emotion_analysis_page/emotionanalysis_page.dart';
 import 'package:yours/pages/homepage/homepage.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_database/ui/firebase_animated_list.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -16,12 +19,13 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+   final ref = FirebaseDatabase.instance.ref('Personal Data');
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final nameController = TextEditingController();
   bool isNotVisible = true;
   final _key = GlobalKey<FormState>();
   final _auth = FirebaseAuth.instance;
-  final ref = FirebaseDatabase.instance.ref('Personal info');
   void signup() {
     if (_key.currentState!.validate()) {
       _auth
@@ -29,8 +33,17 @@ class _SignupPageState extends State<SignupPage> {
               email: emailController.text.toString(),
               password: passwordController.text.toString())
           .then((value) {
+            String id = emailController.text.toString(); 
+            ref.child(id).set({
+                                  'id' : id,
+                                  'Name' : nameController.text.toString(),
+                                  'e-mail' : emailController.text.toString(),
+                                
+                                });
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => HomePage()));
+      }).onError((error, stackTrace) {
+        Utils().toastMessage(error.toString());
       });
     }
   }
@@ -93,6 +106,30 @@ class _SignupPageState extends State<SignupPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+
+                              SizedBox(
+                          height: 85,
+                          child: TextFormField(
+                            controller: nameController,
+                            style: TextStyle(color: Colors.white),
+                            
+                            decoration: InputDecoration(
+                                prefixIcon: Icon(
+                                  Icons.person,
+                                  color: Colors.white70,
+                                ),
+                                labelText: "What do you go by?",
+                                labelStyle: TextStyle(color: Colors.white70),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                          ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 40,
+                        ),
+                        
                         SizedBox(
                           height: 85,
                           child: TextFormField(
@@ -157,7 +194,9 @@ class _SignupPageState extends State<SignupPage> {
                             onPressed: () {
                               if (_key.currentState!.validate()) {
                                 signup();
+                                
                               }
+
                             },
                             child: const Text(
                               "SIGN UP",

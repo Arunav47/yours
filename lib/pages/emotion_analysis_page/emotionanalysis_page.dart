@@ -105,12 +105,14 @@ class _FeelingAnalysisState extends State<FeelingAnalysis> {
                   if(recorder.isRecording){
                     val = false;
                     await stop();
-                    setState((){});
+                    setState((){
+                    });
                     Navigator.push(context, MaterialPageRoute(builder: (context) => LandingPage()));
                   }
                   else{
                     val = true;
                     await record();
+                    
                     setState((){});
                   }
                   },

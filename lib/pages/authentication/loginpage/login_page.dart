@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:yours/Utils/Validator/validator.dart';
+import 'package:yours/Utils/toastMessage/toastMessage.dart';
 import 'package:yours/pages/authentication/signup_page/signup_page.dart';
 import 'package:yours/pages/authentication/widgets/togglevisibility.dart';
 import 'package:yours/pages/emotion_analysis_page/emotionanalysis_page.dart';
@@ -27,7 +28,9 @@ class _LoginPageState extends State<LoginPage> {
               password: passwordController.text.toString())
           .then((value) {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomePage()));
+            context, MaterialPageRoute(builder: (context) => FeelingAnalysis()));
+      }).onError((error, stackTrace) {
+        Utils().toastMessage(error.toString());
       });
     }
   }
